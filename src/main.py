@@ -1,13 +1,13 @@
 from game import ejecutar_juego
 from palabras import obtener_palabra
+from random import randint
 
 # EJERCICIO 1
-import random
 def generar_pista(palabra):
     pista = palabra
     for i in range(0, len(pista)):
-        p1 = random.randint(0, 1)
-        if pista[p1] != "_" and p1==1:
+        p1 = randint(0, 1)
+        if pista[i] != "_" and p1==1:
            pista = pista.replace(pista[i], "_")
     return pista
 
@@ -28,8 +28,19 @@ def calcular_puntaje(tiempo_restante, intentos_restantes):
 
 # Ejercicio Adicional
 def actualizar_pista(pista: str, palabra):
-    # Si me queda una letra por adivinar, no hago nada y devuelvo la misma pista que tenía
-    pass
+    cantidad_ocultas = 0
+
+    for letra in pista:
+        cantidad_ocultas += 1 if letra == '_' else 0
+
+    for i in range(0,len(pista)):
+        rand_bin = randint(0, 1)
+        agregada = False
+        condition = cantidad_ocultas > 1 and rand_bin == 1 and pista[i] == '_' and not agregada
+        if condition:
+            pista.replace(pista[i], palabra[i])
+
+    return pista
 
 
 # ---------------- MAIN ----------------
