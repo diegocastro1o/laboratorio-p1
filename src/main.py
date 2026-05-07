@@ -8,7 +8,7 @@ def generar_pista(palabra):
     for i in range(0, len(pista)):
         p1 = random.randint(0, 1)
         if pista[p1] != "_" and p1==1:
-           pista = pista.replace(pista[i], "_", 1)
+           pista = pista.replace(pista[i], "_")
     return pista
 
 # EJERCICIO 2
