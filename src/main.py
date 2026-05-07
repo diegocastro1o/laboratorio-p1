@@ -18,12 +18,13 @@ def verificar_palabra(palabra, intento):
         return True
     else:
         return False
+    
     pass
 
 # EJERCICIO 3
 def calcular_puntaje(tiempo_restante, intentos_restantes):
     puntaje_total=(tiempo_restante*10)+(intentos_restantes*20)
-    return puntaje_total
+    return int(puntaje_total)
 
 # Ejercicio Adicional
 def actualizar_pista(pista: str, palabra):
