@@ -14,7 +14,7 @@ def generar_pista(palabra):
 # EJERCICIO 2
 def verificar_palabra(palabra, intento):
     palabra1=intento.lower()
-    if palabra1==palabra.lowe():
+    if palabra1==palabra.lower():
         return True
     else:
         return False
