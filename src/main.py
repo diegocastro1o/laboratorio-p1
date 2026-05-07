@@ -18,7 +18,7 @@ def verificar_palabra(palabra, intento):
     """
     pass
 
-
+# EJERCICIO 3
 def calcular_puntaje(tiempo_restante, intentos_restantes):
     pass
 
