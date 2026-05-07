@@ -13,10 +13,11 @@ def generar_pista(palabra):
 
 # EJERCICIO 2
 def verificar_palabra(palabra, intento):
-    """
-    Debe devolver True si el intento es correcto, False si no.
-    juan
-    """
+    palabra1=lower(intento)
+    if palabra1==palabra:
+        return True
+    else:
+        return False
     pass
 
 
