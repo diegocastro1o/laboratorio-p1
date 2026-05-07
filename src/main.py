@@ -15,6 +15,7 @@ def generar_pista(palabra):
 def verificar_palabra(palabra, intento):
     """
     Debe devolver True si el intento es correcto, False si no.
+    juan
     """
     pass
 
