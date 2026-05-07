@@ -2,14 +2,14 @@ from game import ejecutar_juego
 from palabras import obtener_palabra
 
 # EJERCICIO 1
+import random
 def generar_pista(palabra):
-    """
-    Dada una palabra, devolver un string con letras y guiones.
-    Ejemplo:
-    "python" -> "p _ t _ o _"
-    """
-    pass
-
+    pista = palabra
+    for i in range(0, len(pista)):
+        p1 = random.randint(0, 1)
+        if pista[p1] != "_" and p1==1:
+           pista = pista.replace(pista[i], "_", 1)
+    return pista
 
 # EJERCICIO 2
 def verificar_palabra(palabra, intento):
