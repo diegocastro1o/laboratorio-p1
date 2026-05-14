@@ -12,14 +12,6 @@ def normalizar(palabra):
     
     return palabra
 
-def obtener_cantidad_ocultas(pista):
-    cantidad_ocultas = 0
-    
-    for letra in pista:
-        cantidad_ocultas += 1 if letra == '_' else 0
-        
-    return cantidad_ocultas
-
 def agregar_caracter(palabra, index, caracter):
     resultado = ''
     
@@ -33,9 +25,8 @@ def generar_pista(palabra):
     pista = palabra
     
     for i in range(len(palabra)):
-        cantidad_ocultas = obtener_cantidad_ocultas(pista)
         rand_bin = randint(0, 1)
-        if rand_bin == 1 and cantidad_ocultas <= len(palabra) * 0.6:
+        if rand_bin == 1 and pista.count('_') <= len(palabra) * 0.6:
             pista = agregar_caracter(pista, i, '_')
     
     return pista
@@ -54,10 +45,9 @@ def calcular_puntaje(tiempo_restante, intentos_restantes):
 
 # Ejercicio Adicional
 def actualizar_pista(pista, palabra):
-    cantidad_ocultas = obtener_cantidad_ocultas(pista)
     pista_actualizada = pista
     
-    while pista == pista_actualizada and cantidad_ocultas > 1:
+    while pista == pista_actualizada and pista.count('_') > 1:
         for i in range(0,len(pista)):
             rand_bin = randint(0, 1)
             if rand_bin == 1 and pista[i] == '_':
